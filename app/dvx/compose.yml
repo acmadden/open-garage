@@ -1,0 +1,41 @@
+services:
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - '3100:3100'
+    volumes:
+      - ./loki/config.yml:/etc/loki/loki-config.yaml
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    volumes:
+      - ./grafana/datasources.yml:/etc/grafana/provisioning/datasources/main.yml
+      - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/main.yml
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+  postgres:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: opengarage
+      LOG_LEVEL: ERROR
+  migrations:
+    image: redgate/flyway:latest
+    platform: linux/amd64
+    command: migrate
+    volumes:
+      - ../migrations/flyway.conf:/flyway/conf/flyway.conf
+      - ../migrations:/flyway/db/migration
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+  minio_data:
