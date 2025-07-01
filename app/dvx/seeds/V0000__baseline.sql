@@ -6,44 +6,22 @@ VALUES
 
 -- Seed vehicles
 INSERT INTO
-	vehicles (id, garage_id, name, vin, YEAR, make, model)
+	vehicles (id, garage_id, name, vin, year, make, model, title_no, purchase_date)
 VALUES
-	(1, 1, 'Ruby', '1N6SD16S2PC348125', '1993', 'Nissan', 'Pickup');
+	(1, 1, 'Ruby', '1N6SD16S2PC348125', '1993', 'Nissan', 'Pickup', '777274243661108', '2025-06-16Z00:00:00'),
+	(2, 1, 'Diamond', null, '2016', 'Nissan', 'Frontier', null, null);
 
--- Seed odometer_logs
+-- Seed service_visits
 INSERT INTO
-	odometer_logs (id, vehicle_id, distance, date)
+	service_visits (id, vehicle_id, odometer, notes, date)
 VALUES
-	(1, 1, 194363, '2025-06-16Z00:00:00');
+	(1, 1, '194363', '','2025-01-08Z00:00:00');
 
--- Seed titles
-INSERT INTO
-	titles (id, vehicle_id, number, issue_date)
-VALUES
-	(1, 1, '777274243661108', '2025-01-08Z00:00:00');
-
--- Seed purchases
-INSERT INTO
-	purchases (id, vehicle_id, odometer_log_id, seller, buyer, currency, amount, date)
-VALUES
-	(1, 1, 1, 'Tanner Wayne Barber', 'Andrew Casey Madden', 'USD', 2500.00, '2025-06-16Z00:00:00');
-
--- Seed parts
-INSERT INTO
-	parts (id, garage_id, number, name, quantity, notes, added_on, updated_on)
-VALUES
-	(1, 1, 'MGA46027', 'MicroGuard Round Panel Air Filter', 1, '1 Year Limited Warranty', '2025-06-16Z00:00:00', '2025-06-16Z00:00:00'),
-	(2, 1, 'R612530B', 'Ultima Starter - Remanufactured', 1, '$40 core charge. TBR.', '2025-06-16Z00:00:00', '2025-06-16Z00:00:00'),
-	(3, 1, 'HP1002', 'K&N Engineering Performance Gold Oil Filter', 1, 'Need to find these in bulk', '2025-06-16Z00:00:00', '2025-06-16Z00:00:00'),
-	(4, 1, 'ZFR5FIX-11', 'NGK Iridium IX Plug (4 Pack)', 1, 'Bought on OReilys with code FATHERSDAY for 20% off', '2025-06-16Z00:00:00', '2025-06-16Z00:00:00'),
-	(5, 1, '1252815453-1630586352', 'Aluminum Radiator for Nissan D21 1986 - 1994', 1, 'Bought off Amazon', '2025-06-18Z00:00:00', '2025-06-18Z00:00:00');
-
--- Seed receipts
-INSERT INTO
-	receipts (id, part_id, vendor, price, rebate, image, date)
-VALUES
-	(1, 1, 'OReilys', 15.99, null, 'blob://location', '2025-06-16Z00:00:00'),
-	(2, 2, 'OReilys', 122.39, 40.00,'blob://location', '2025-06-16Z00:00:00'),
-	(3, 3, 'OReilys', 17.99, null, 'blob://location', '2025-06-16Z00:00:00'),
-	(4, 4, 'OReilys', 9.59, null,'blob://location', '2025-06-16Z00:00:00'),
-	(5, 5, 'Amazon', 60.99, null, 'blob://location2', '2025-06-16Z00:00:00');
+-- -- -- Seed resources
+-- INSERT INTO resources (id, vehicle_id, link, date) VALUES
+-- (1, 1, 'https://www.youtube.com/watch?v=uR9lnJAmqbw&list=LL&index=2&t=5s', NOW()),
+-- (2, 1, 'https://www.youtube.com/watch?v=YwVG79uYXQ0&list=LL&index=3&t=899s', NOW()),
+-- (3, 1, 'https://www.youtube.com/watch?v=VMxPPp3Tmf4&list=LL&index=3&pp=gAQBiAQB', NOW()),
+-- (4, 1, 'https://www.youtube.com/watch?v=pFStYq3ekvg&list=LL&index=6&t=684s', NOW()),
+-- (5, 1, 'https://www.youtube.com/watch?v=V6yXRmBx4KQ&list=LL', NOW()),
+-- (6, 1, 'https://www.youtube.com/watch?v=V6yXRmBx4KQ&list=LL', NOW());
