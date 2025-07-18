@@ -1,5 +1,5 @@
 import { redirect } from '@sveltejs/kit';
 
 export const load = () => {
-	redirect(301, '/sandbox');
+	redirect(303, '/garage');
 };
