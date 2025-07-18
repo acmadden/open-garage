@@ -37,7 +37,7 @@
 						class:border-r-1={page.url.href.includes(menu_item.slug)}
 						class="border-primary-50 flex"
 					>
-						<a href={menu_item.slug} class="flex-1 py-1">{menu_item.label}</a>
+						<a href={menu_item.slug} class="anchor flex-1 py-1">{menu_item.label}</a>
 					</li>
 				{/each}
 			</ul>
