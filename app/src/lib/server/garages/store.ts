@@ -1,8 +1,8 @@
-import { db } from '$lib';
+import { db } from '../db';
+import Result from 'ts-results';
+import { GarageNotFound } from './errors';
 
-export const load = async () => {
-	const garage_id = 1;
-
+const get = async (garage_id: string) => {
 	const garage = await db.query.garages.findFirst({
 		with: {
 			vehicles: {
@@ -20,7 +20,13 @@ export const load = async () => {
 		where: (garages, { eq }) => eq(garages.id, garage_id)
 	});
 
-	return {
-		garage
-	};
+	if (!garage) {
+		return Result.Err(new GarageNotFound());
+	}
+
+	return Result.Ok(garage);
+};
+
+export const store = {
+	get
 };
