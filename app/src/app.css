@@ -2,11 +2,12 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/reign';
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
 body {
-	background-image: url('/concrete-textured-bg.webp');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-color: #222222;
+	font-family: 'Source Code Pro', sans-serif;
 }
