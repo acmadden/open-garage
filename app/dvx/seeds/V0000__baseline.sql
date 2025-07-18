@@ -8,7 +8,7 @@ VALUES
 INSERT INTO
 	vehicles (id, garage_id, name, vin, year, make, model, title_no, purchase_date)
 VALUES
-	(1, 1, 'Ruby', '1N6SD16S2PC348125', '1993', 'Nissan', 'Pickup', '777274243661108', '2025-06-16Z00:00:00'),
+	(1, 1, 'Ruby', '5G2WR54C9XF975310', '1993', 'Nissan', 'Pickup', '766274243771205', '2025-06-16Z00:00:00'),
 	(2, 1, 'Diamond', null, '2016', 'Nissan', 'Frontier', null, null);
 
 -- Seed service_visits
