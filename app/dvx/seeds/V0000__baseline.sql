@@ -6,16 +6,21 @@ VALUES
 
 -- Seed vehicles
 INSERT INTO
-	vehicles (id, garage_id, name, vin, year, make, model, title_no, purchase_date)
+	vehicles (id, garage_id, name, vin, year, make, model)
 VALUES
-	(1, 1, 'Ruby', '5G2WR54C9XF975310', '1993', 'Nissan', 'Pickup', '766274243771205', '2025-06-16Z00:00:00'),
-	(2, 1, 'Diamond', null, '2016', 'Nissan', 'Frontier', null, null);
+	(1, 1, 'Ruby', '5G2WR54C9XF975310', '1993', 'Nissan', 'Pickup'),
+	(2, 1, 'Diamond', null, '2016', 'Nissan', 'Frontier');
 
 -- Seed service_visits
 INSERT INTO
 	service_visits (id, vehicle_id, odometer, notes, date)
 VALUES
 	(1, 1, '194363', '','2025-01-08Z00:00:00');
+
+
+--Seed purchases
+-- title_no: varchar({ length: 50 }),
+-- purchase_date: date()
 
 -- -- -- Seed resources
 -- INSERT INTO resources (id, vehicle_id, link, date) VALUES

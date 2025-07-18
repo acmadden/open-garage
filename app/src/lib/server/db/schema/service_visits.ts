@@ -1,10 +1,12 @@
 import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 import { vehicles } from '../schema/vehicles';
 import { relations } from 'drizzle-orm';
+import { encoded } from '../types/encoded';
 
 export const service_visits = pgTable('service_visits', {
-	id: serial('id').primaryKey(),
-	vehicle_id: integer()
+	id: encoded.pk().primaryKey(),
+	vehicle_id: encoded
+		.fk()
 		.notNull()
 		.references(() => vehicles.id),
 	odometer: integer().notNull(),

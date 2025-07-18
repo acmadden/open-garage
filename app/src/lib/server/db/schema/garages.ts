@@ -1,9 +1,10 @@
 import { relations } from 'drizzle-orm';
-import { pgTable, serial, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, varchar } from 'drizzle-orm/pg-core';
 import { vehicles } from './vehicles';
+import { encoded } from '../types/encoded';
 
 export const garages = pgTable('garages', {
-	id: serial('id').primaryKey(),
+	id: encoded.pk().primaryKey(),
 	name: varchar({ length: 100 }).notNull()
 });
 

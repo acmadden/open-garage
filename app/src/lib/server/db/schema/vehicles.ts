@@ -2,21 +2,21 @@ import { date, integer, pgTable, serial, uniqueIndex, varchar } from 'drizzle-or
 import { garages } from './garages';
 import { relations } from 'drizzle-orm';
 import { service_visits } from './service_visits';
+import { encoded } from '../types/encoded';
 
 export const vehicles = pgTable(
 	'vehicles',
 	{
-		id: serial('id').primaryKey(),
-		garage_id: integer()
+		id: encoded.pk().primaryKey(),
+		garage_id: encoded
+			.fk()
 			.notNull()
 			.references(() => garages.id),
 		name: varchar({ length: 100 }),
 		vin: varchar({ length: 17 }),
 		year: varchar({ length: 4 }),
 		make: varchar({ length: 100 }),
-		model: varchar({ length: 100 }),
-		title_no: varchar({ length: 50 }),
-		purchase_date: date()
+		model: varchar({ length: 100 })
 	},
 	(table) => [uniqueIndex('vin_idx').on(table.vin)]
 );

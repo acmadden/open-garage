@@ -1,5 +1,5 @@
 {
-  "id": "496cda89-6c2b-4d96-895a-1a5f4e8c0ee7",
+  "id": "ae843eaf-e5e6-475a-b71d-1ff71b7cf9de",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -129,18 +129,6 @@
         "model": {
           "name": "model",
           "type": "varchar(100)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "title_no": {
-          "name": "title_no",
-          "type": "varchar(50)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "purchase_date": {
-          "name": "purchase_date",
-          "type": "date",
           "primaryKey": false,
           "notNull": false
         }
