@@ -1,4 +1,4 @@
-import { garages } from '$lib';
+import { garages, logger } from '$lib';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
@@ -11,6 +11,7 @@ export const load = async ({ params }) => {
 			case 'garage-not-found':
 				error(404, 'no findy');
 			default:
+				logger.error(garage.val.message);
 				error(500, 'server go boom');
 		}
 	}
