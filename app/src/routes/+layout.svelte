@@ -7,11 +7,7 @@
 	const menu_items = [
 		{
 			label: 'Garage',
-			slug: '/garage'
-		},
-		{
-			label: 'Vehicles',
-			slug: '/vehicles'
+			slug: '/garages'
 		}
 	];
 </script>
@@ -43,7 +39,7 @@
 			</ul>
 		</nav>
 	</div>
-	<div class="overflow-hidden p-4">
+	<div class="h-full w-full overflow-hidden overflow-y-scroll p-6">
 		{@render children()}
 	</div>
 </div>
