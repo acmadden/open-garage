@@ -18,7 +18,8 @@ CREATE TABLE "vehicles" (
 	"vin" varchar(17),
 	"year" varchar(4),
 	"make" varchar(100),
-	"model" varchar(100)
+	"model" varchar(100),
+	"photo" varchar
 );
 --> statement-breakpoint
 ALTER TABLE "service_visits" ADD CONSTRAINT "service_visits_vehicle_id_vehicles_id_fk" FOREIGN KEY ("vehicle_id") REFERENCES "public"."vehicles"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint

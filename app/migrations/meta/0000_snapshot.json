@@ -1,5 +1,5 @@
 {
-  "id": "7ccb5f49-ec51-4cf4-a9f6-6dcbd708786a",
+  "id": "95a34147-2c4d-42f9-9fdd-ee38a4b760b1",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -129,6 +129,12 @@
         "model": {
           "name": "model",
           "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "photo": {
+          "name": "photo",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         }

@@ -16,7 +16,8 @@ export const vehicles = pgTable(
 		vin: varchar({ length: 17 }),
 		year: varchar({ length: 4 }),
 		make: varchar({ length: 100 }),
-		model: varchar({ length: 100 })
+		model: varchar({ length: 100 }),
+		photo: varchar()
 	},
 	(table) => [uniqueIndex('vin_idx').on(table.vin)]
 );
