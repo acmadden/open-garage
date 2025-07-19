@@ -1,4 +1,4 @@
-import { integer, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { integer, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 import { vehicles } from '../schema/vehicles';
 import { relations } from 'drizzle-orm';
 import { encoded } from '../types/encoded';
@@ -14,7 +14,7 @@ export const service_visits = pgTable('service_visits', {
 	date: timestamp().notNull()
 });
 
-export const service_visit_vehicle = relations(service_visits, ({ one }) => ({
+export const service_visit_relations = relations(service_visits, ({ one }) => ({
 	vehicle: one(vehicles, {
 		fields: [service_visits.vehicle_id],
 		references: [vehicles.id]

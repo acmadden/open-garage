@@ -8,6 +8,6 @@ export const garages = pgTable('garages', {
 	name: varchar({ length: 100 }).notNull()
 });
 
-export const garage_vehicles = relations(garages, ({ many }) => ({
+export const garage_relations = relations(garages, ({ many }) => ({
 	vehicles: many(vehicles)
 }));

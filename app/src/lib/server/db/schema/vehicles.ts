@@ -1,4 +1,4 @@
-import { date, integer, pgTable, serial, uniqueIndex, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, uniqueIndex, varchar } from 'drizzle-orm/pg-core';
 import { garages } from './garages';
 import { relations } from 'drizzle-orm';
 import { service_visits } from './service_visits';
@@ -21,13 +21,10 @@ export const vehicles = pgTable(
 	(table) => [uniqueIndex('vin_idx').on(table.vin)]
 );
 
-export const vehicle_garage = relations(vehicles, ({ one }) => ({
+export const vehicle_relations = relations(vehicles, ({ one, many }) => ({
 	garage: one(garages, {
 		fields: [vehicles.garage_id],
 		references: [garages.id]
-	})
-}));
-
-export const vehicle_service_visits = relations(vehicles, ({ many }) => ({
+	}),
 	service_visits: many(service_visits)
 }));

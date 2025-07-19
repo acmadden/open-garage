@@ -1,13 +1,12 @@
-import { garage_vehicles, garages } from './garages';
-import { vehicle_garage, vehicle_service_visits, vehicles } from './vehicles';
-import { service_visit_vehicle, service_visits } from './service_visits';
+import { garage_relations, garages } from './garages';
+import { vehicles, vehicle_relations } from './vehicles';
+import { service_visits, service_visit_relations } from './service_visits';
 
 export default {
 	garages,
-	garage_vehicles,
+	garage_relations,
 	vehicles,
-	vehicle_garage,
-	vehicle_service_visits,
+	vehicle_relations,
 	service_visits,
-	service_visit_vehicle
+	service_visit_relations
 };
